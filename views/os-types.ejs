@@ -1,0 +1,164 @@
+ <%- include('partials/head.ejs') %>
+<%- include('partials/nav.ejs') %>
+ 
+ <main>
+        <section id="intro" class="first-section">
+            <h1>OS Types (Intro)</h1>
+            <div class="main-area">
+                <div class="main-area-left"></div>
+                <div class="main-area-center">
+                    <p>Operating systems can be classified into different types based on how they manage tasks, users, and system resources.<br>
+                        Each type is designed for specific environments such as personal computers, servers, or embedded systems.</p>
+                    <img src="img/os-types.png" alt="OS Types">
+                    <p>Below are four major types of operating systems commonly studied in computer science.</p>
+                </div>
+                <div class="main-area-right">
+                    <a href="#batch" class="scroll-circle" aria-label="Scroll to next section">
+                        <svg viewBox="0 0 24 24" class="scroll-icon" aria-hidden="true">
+                            <path d="M12 16.5c-.3 0-.5-.1-.7-.3l-6-6a1 1 0 0 1 1.4-1.4L12 14.1l5.3-5.3a1 1 0 1 1 1.4 1.4l-6 6c-.2.2-.4.3-.7.3z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <section id="batch" class="second-section">
+            <h1>Batch & Time-Sharing Operating Systems</h1>
+            <div class="main-area">
+                <div class="main-area-left"></div>
+                <div class="main-area-center">
+                    <h2 class="bigger-font">Batch Operating System</h2>
+                    <p>A Batch OS processes groups of jobs together without user interaction during execution.</p>
+                    <h3>Characteristics:</h3>
+                    <ul class="no-margin">
+                        <li>Jobs are collected and executed in batches</li>
+                        <li>No direct user interaction</li>
+                        <li>Efficient for repetitive tasks</li>
+                    </ul>
+                    <p><strong>Example: </strong>Payroll systems and large data processing systems.</p>
+                    <h2 class="bigger-font">Time-Sharing Operating System</h2>
+                    <p>A Time-Sharing OS allows multiple users or programs to share the CPU by dividing time into small slices.</p>
+                    <h3>Characteristics:</h3>
+                    <ul class="no-margin">
+                        <li>Supports multitasking</li>
+                        <li>Interactive</li>
+                        <li>Quick response time</li>
+                    </ul>
+                    <p><strong>Example: </strong>Unix and modern desktop operating systems.</p>
+                </div>
+                <div class="main-area-right">
+
+                    <!-- Go to Top (Double Up Arrow) -->
+                    <a href="#intro" class="scroll-circle go-to-top" aria-label="Go to top">
+                        <svg viewBox="0 0 24 24" class="scroll-icon" aria-hidden="true">
+                            <path d="M12 7.5c.3 0 .5.1.7.3l6 6a1 1 0 1 1-1.4 1.4L12 9.9l-5.3 5.3a1 1 0 1 1-1.4-1.4l6-6c.2-.2.4-.3.7-.3z" />
+                        </svg>
+                    </a>
+
+                    <!-- Go Down (Single Arrow) -->
+                    <a href="#distro" class="scroll-circle" aria-label="Scroll down">
+                        <svg viewBox="0 0 24 24" class="scroll-icon" aria-hidden="true">
+                            <path d="M12 16.5c-.3 0-.5-.1-.7-.3l-6-6a1 1 0 0 1 1.4-1.4L12 14.1l5.3-5.3a1 1 0 1 1 1.4 1.4l-6 6c-.2.2-.4.3-.7.3z" />
+                        </svg>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+        <section id="distro" class="third-section">
+            <h1>Distributed & Network Operating Systems</h1>
+            <div class="main-area">
+                <div class="main-area-left"></div>
+                <div class="main-area-center">
+                    <h2 class="bigger-font">Distributed Operating System</h2>
+                    <p>A Distributed OS manages multiple connected computers and makes them function as one system.</p>
+                    <h3>Characteristics:</h3>
+                    <ul class="no-margin">
+                        <li>Shared resources</li>
+                        <li>Improved reliability</li>
+                        <li>Used in cloud and cluster systems</li>
+                    </ul>
+                    <h2 class="bigger-font padding-top">Network Operating System (NOS)</h2>
+                    <p>A Network OS manages and controls resources across a network.</p>
+                    <h3>Characteristics:</h3>
+                    <ul class="no-margin">
+                        <li>File and printer sharing</li>
+                        <li>Centralized user management</li>
+                        <li>Server-based control</li>
+                    </ul>
+                    <p><strong>Example: </strong>Windows Server, Linux Server.</p>
+                </div>
+                <div class="main-area-right">
+
+                    <!-- Go to Top (Double Up Arrow) -->
+                    <a href="#intro" class="scroll-circle go-to-top" aria-label="Go to top">
+                        <svg viewBox="0 0 24 24" class="scroll-icon" aria-hidden="true">
+                            <!-- first arrow -->
+                            <path d="M12 5c.3 0 .5.1.7.3l6 6a1 1 0 1 1-1.4 1.4L12 7.4l-5.3 5.3a1 1 0 1 1-1.4-1.4l6-6c.2-.2.4-.3.7-.3z" />
+                            <!-- second arrow -->
+                            <path d="M12 11c.3 0 .5.1.7.3l6 6a1 1 0 1 1-1.4 1.4L12 13.4l-5.3 5.3a1 1 0 1 1-1.4-1.4l6-6c.2-.2.4-.3.7-.3z" />
+                        </svg>
+                    </a>
+                    <a href="#batch" class="scroll-circle go-back" aria-label="Go up">
+                        <svg viewBox="0 0 24 24" class="scroll-icon" aria-hidden="true">
+                            <path d="M12 7.5c.3 0 .5.1.7.3l6 6a1 1 0 1 1-1.4 1.4L12 9.9l-5.3 5.3a1 1 0 1 1-1.4-1.4l6-6c.2-.2.4-.3.7-.3z" />
+                        </svg>
+                    </a>
+
+                    <!-- Go Down (Single Arrow) -->
+                    <a href="#rtos" class="scroll-circle" aria-label="Scroll down">
+                        <svg viewBox="0 0 24 24" class="scroll-icon" aria-hidden="true">
+                            <path d="M12 16.5c-.3 0-.5-.1-.7-.3l-6-6a1 1 0 0 1 1.4-1.4L12 14.1l5.3-5.3a1 1 0 1 1 1.4 1.4l-6 6c-.2.2-.4.3-.7.3z" />
+                        </svg>
+                    </a>
+
+                </div>
+            </div>
+        </section>
+        <section class="fourth-section" id="rtos">
+            <h1>Real-Time Operating Systems (RTOS)</h1>
+            <div class="main-area">
+                <div class="main-area-left"></div>
+                <div class="main-area-center">
+                    <p>A Real-Time Operating System is designed to process data within strict time limits.</p>
+                    <h2>Types:</h2>
+                    <ul class="no-margin">
+                        <li>Hard Real-Time: Deadlines must be met exactly</li>
+                        <li>Soft Real-Time: Small delays are acceptable</li>
+                    </ul>
+                    <h2 class="padding-top">Examples:</h2>
+                    <ul class="no-margin">
+                        <li>Medical devices</li>
+                        <li>Industrial control systems</li>
+                        <li>Air traffic control</li>
+                    </ul>
+                    <p><strong>Why it matters: </strong>RTOS systems are used where timing and reliability are critical.</p>
+                    <p class="no-margin small-text">
+                        <i><strong>Sources:</strong>
+                            The information on this page was adapted for educational purposes from
+                            <a href="https://www.tutorialspoint.com/operating_system/index.htm" target="_blank">TutorialsPoint</a>,
+                            <a href="https://www.ibm.com/docs/en/aix/7.3?topic=concepts-operating-system-components" target="_blank">IBM Documentation</a>, and
+                            <a href="https://www.cs.cmu.edu/~410/" target="_blank">Carnegie Mellon University</a>.
+                        </i>
+                    </p>
+                </div>
+                <div class="main-area-right">
+                    <a href="#intro" class="scroll-circle go-to-top" aria-label="Go to top">
+                        <svg viewBox="0 0 24 24" class="scroll-icon" aria-hidden="true">
+                            <!-- first arrow -->
+                            <path d="M12 5c.3 0 .5.1.7.3l6 6a1 1 0 1 1-1.4 1.4L12 7.4l-5.3 5.3a1 1 0 1 1-1.4-1.4l6-6c.2-.2.4-.3.7-.3z" />
+                            <!-- second arrow -->
+                            <path d="M12 11c.3 0 .5.1.7.3l6 6a1 1 0 1 1-1.4 1.4L12 13.4l-5.3 5.3a1 1 0 1 1-1.4-1.4l6-6c.2-.2.4-.3.7-.3z" />
+                        </svg>
+                    </a>
+                    <a href="#distro" class="scroll-circle go-back" aria-label="Go up">
+                        <svg viewBox="0 0 24 24" class="scroll-icon" aria-hidden="true">
+                            <path d="M12 7.5c.3 0 .5.1.7.3l6 6a1 1 0 1 1-1.4 1.4L12 9.9l-5.3 5.3a1 1 0 1 1-1.4-1.4l6-6c.2-.2.4-.3.7-.3z" />
+                        </svg>
+                    </a>
+                </div>
+            </div>
+        </section>
+        <div class="main-area-right"></div>
+    </main>
+
+    <%- include('partials/footer.ejs') %>
