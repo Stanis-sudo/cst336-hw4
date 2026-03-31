@@ -149,3 +149,69 @@ main section .padding-top {
   box-shadow: 0 6px 15px rgba(0, 0, 0, 0.15);
   margin-top: 1em;
 }
+
+.history-page {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px 50px;
+}
+
+.server-info-intro {
+    background-color: #f5f7fb;
+    border: 1px solid #d9e1ec;
+    border-radius: 12px;
+    padding: 24px;
+    margin-bottom: 30px;
+}
+
+.server-info-intro h1 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 2rem;
+    color: #1f2d3d;
+}
+
+.server-info-intro p {
+    margin: 0;
+    line-height: 1.7;
+    color: #3d4a57;
+}
+
+.info-card-row {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.info-card {
+    background-color: #ffffff;
+    border: 1px solid #d9e1ec;
+    border-radius: 12px;
+    padding: 22px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.info-card h2 {
+    margin-top: 0;
+    margin-bottom: 16px;
+    font-size: 1.3rem;
+    color: #1f2d3d;
+    border-bottom: 2px solid #eef2f7;
+    padding-bottom: 8px;
+}
+
+.info-card p {
+    margin: 10px 0;
+    line-height: 1.5;
+    color: #3d4a57;
+}
+
+.info-card strong {
+    color: #1f2d3d;
+}
+
+@media (max-width: 900px) {
+    .info-card-row {
+        grid-template-columns: 1fr;
+    }
+}

@@ -1,0 +1,49 @@
+<%- include('partials/head.ejs') %>
+<%- include('partials/nav.ejs') %>
+
+
+<main class="history-page">
+    <div>
+        <section class="server-info-intro">
+            <h1>Server System Information</h1>
+            <p>
+                This section displays system information collected from the server where this application is hosted on Render. Since the application runs on a cloud-based server rather than the user's local machine, the data below reflects
+                the remote environment provided by Render. This information is included to demonstrate how a Node.js package can retrieve real system details within an Express application.
+            </p>
+        </section>
+
+        <section class="info-card-row">
+            <div class="info-card">
+                <h2>Operating System</h2>
+                <p><strong>Platform:</strong> <span id="os-platform">Loading...</span></p>
+                <p><strong>Distro:</strong> <span id="os-distro">Loading...</span></p>
+                <p><strong>Release:</strong> <span id="os-release">Loading...</span></p>
+                <p><strong>Kernel:</strong> <span id="os-kernel">Loading...</span></p>
+                <p><strong>Architecture:</strong> <span id="os-arch">Loading...</span></p>
+                <p><strong>Hostname:</strong> <span id="os-hostname">Loading...</span></p>
+            </div>
+
+            <div class="info-card">
+                <h2>CPU</h2>
+                <p><strong>Manufacturer:</strong> <span id="cpu-manufacturer">Loading...</span></p>
+                <p><strong>Brand:</strong> <span id="cpu-brand">Loading...</span></p>
+                <p><strong>Socket:</strong> <span id="cpu-socket">Loading...</span></p>
+                <p><strong>Cores:</strong> <span id="cpu-cores">Loading...</span></p>
+                <p><strong>Physical Cores:</strong> <span id="cpu-physical-cores">Loading...</span></p>
+                <p><strong>Speed:</strong> <span id="cpu-speed">Loading...</span></p>
+            </div>
+
+            <div class="info-card">
+                <h2>Hardware Details</h2>
+                <p><strong>Baseboard Manufacturer:</strong> <span id="board-manufacturer">Loading...</span></p>
+                <p><strong>Baseboard Model:</strong> <span id="board-model">Loading...</span></p>
+                <p><strong>BIOS Vendor:</strong> <span id="bios-vendor">Loading...</span></p>
+                <p><strong>BIOS Version:</strong> <span id="bios-version">Loading...</span></p>
+                <p><strong>RAM Summary:</strong> <span id="ram-summary">Loading...</span></p>
+            </div>
+        </section>
+    </div>
+</main>
+
+<%- include('partials/footer.ejs') %>
+<script src="/js/server-info.js"></script>

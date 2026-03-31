@@ -10,11 +10,11 @@ app.set("view engine", "ejs");
 app.use(express.static("public"));
 
 var navLinks = [
-    { name: "Home", url: "/" , fileName: 'index'},
-    { name: "OS Components", url: "/components", fileName: 'components'},
+    { name: "Home", url: "/", fileName: 'index' },
+    { name: "OS Components", url: "/components", fileName: 'components' },
     { name: "OS Types", url: "/os-types", fileName: 'os-types' },
     { name: "Popular OS", url: "/popular-os", fileName: 'popular-os' },
-    { name: "OS History", url: "/os-history", fileName: "os-history" }
+    { name: "Sys Info", url: "/sys-info", fileName: "sys-info" }
 ]
 
 const popularOS = [
@@ -82,22 +82,77 @@ app.get(navLinks[3].url, async (req, res) => {
     }
 });
 
-app.get(navLinks[4].url, async (req, res) => {
-        try {
+// app.get(navLinks[4].url, async (req, res) => {
+//         try {
+//         let cpuInfo = await si.cpu();
+//         let osInfo = await si.osInfo();
+//         let biosInfo = await si.bios();
+//         let baseboardInfo = await si.baseboard();
+//         let systemInfo = await si.system();
+
+//         console.log(cpuInfo);
+//         console.log(osInfo);
+//         console.log(biosInfo);
+//         console.log(baseboardInfo);
+//         console.log(systemInfo);
+
+//         res.render(navLinks[4].fileName, {
+//             navLinks: getNavLinks(navLinks[4].name),
+//             cpuInfo: cpuInfo,
+//             osInfo: osInfo,
+//             biosInfo: biosInfo,
+//             baseboardInfo: baseboardInfo,
+//             systemInfo: systemInfo
+//         });
+//     } catch (error) {
+//         console.error(error);
+//         res.status(500).send("Error loading OS info");
+//     }
+// });
+
+app.get(navLinks[4].url, (req, res) => {
+    res.render(navLinks[4].fileName, { navLinks: getNavLinks(navLinks[4].name) });
+});
+
+app.get('/nodePackage/getData/', async (req, res) => {
+    try {
         let cpuInfo = await si.cpu();
         let osInfo = await si.osInfo();
+        let biosInfo = await si.bios();
+        let baseboardInfo = await si.baseboard();
+        let memInfo = await si.mem();
+        let memLayoutInfo = await si.memLayout();
 
-        console.log(cpuInfo);
-        console.log(osInfo);
+        // console.log(cpuInfo);
+        // console.log(osInfo);
+        // console.log(biosInfo);
+        // console.log(baseboardInfo);
+        // console.log(memInfo);
+        // console.log(memLayoutInfo);
 
-        res.render(navLinks[4].fileName, {
-            navLinks: getNavLinks(navLinks[4].name),
+        const totalRam = memLayoutInfo.reduce((sum, stick) => sum + stick.size, 0);
+
+        const stickCount = memLayoutInfo.length;
+        const stickSize = memLayoutInfo[0]?.size || 0;
+        const type = memLayoutInfo[0]?.type || 'Unknown';
+        const speed = memLayoutInfo[0]?.clockSpeed || 'Unknown';
+
+        // Convert bytes → GB
+        const totalGB = (totalRam / 1073741824).toFixed(0);
+        const stickGB = (stickSize / 1073741824).toFixed(0);
+
+        const ramSummary = `${totalGB} GB (${stickCount} × ${stickGB} GB) ${type} @ ${speed} MHz`;
+
+        res.json({
             cpuInfo: cpuInfo,
-            osInfo: osInfo
+            osInfo: osInfo,
+            biosInfo: biosInfo,
+            baseboardInfo: baseboardInfo,
+            ramSummary: ramSummary
         });
     } catch (error) {
         console.error(error);
-        res.status(500).send("Error loading OS info");
+        res.status(500).send('Could not load server info');
     }
 });
 
